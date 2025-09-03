@@ -1,0 +1,7 @@
+1. Инициализировала миграцию python -m flask db init
+2. Создала первую миграцию (создание таблиц) python -m flask db migrate -m "Initial migration. Create Note table."
+3. Вручную сделно применение миграции python -m flask db upgrade
+4.  Вторая миграция (добавление колонки subtitle) python -m flask db migrate -m "Add subtitle column to Note table."
+5. Последующие применения изменений к базе данных сделано автоматически в файле app.py перед запуском сервера if __name__ == '__main__':
+    with app.app_context():
+        upgrade()
