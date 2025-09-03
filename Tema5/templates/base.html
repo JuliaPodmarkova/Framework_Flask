@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой Блог{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Мой блог: Путь Python-разработчика</h1>
+        <nav>
+            {# Эта секция показывает разные ссылки в зависимости от того, вошел ли пользователь в систему #}
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('home') }}">Главная</a>
+                <a href="{{ url_for('notes') }}">Дневник</a>
+                <span>Привет, {{ current_user.username }}!</span>
+                <a href="{{ url_for('logout') }}">Выйти</a>
+            {% else %}
+                <a href="{{ url_for('home_page') }}">Начало</a>
+                <a href="{{ url_for('login') }}">Войти</a>
+                <a href="{{ url_for('register') }}">Регистрация</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main class="container">
+        {# Этот блок будет отображать все flash-сообщения (например, об успехе или ошибке) #}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Создано с помощью Flask и капельки магии ✨</p>
+    </footer>
+
+</body>
+</html>

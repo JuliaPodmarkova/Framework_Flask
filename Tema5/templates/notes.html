@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Дневник программиста{% endblock %}
+
+{% block content %}
+    <h2>📓 Дневник программиста</h2>
+    <p>Здесь я записываю свои мысли, идеи и прогресс в изучении кода.</p>
+
+    <section class="note-form">
+        <h3>Новая запись</h3>
+        <form action="{{ url_for('notes') }}" method="post">
+            <div class="form-group">
+                <label for="title">Заголовок:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subtitle">Подзаголовок (необязательно):</label>
+                <input type="text" id="subtitle" name="subtitle">
+            </div>
+
+            <div class="form-group">
+                <label for="text">Текст записи:</label>
+                <textarea id="text" name="text" rows="5" required></textarea>
+            </div>
+            <button type="submit">Добавить запись</button>
+        </form>
+    </section>
+
+    <section class="notes-list">
+        <h3>Все записи</h3>
+        {% for note in notes %}
+            <div class="note-card">
+                <h4>{{ note.title }}</h4>
+                {% if note.subtitle %}
+                    <p><em>{{ note.subtitle }}</em></p>
+                {% endif %}
+                <p class="note-text">{{ note.text }}</p>
+            </div>
+        {% else %}
+            <p>Пока что здесь нет ни одной записи. Самое время добавить первую!</p>
+        {% endfor %}
+    </section>
+{% endblock %}
