@@ -1,0 +1,233 @@
+body {
+    padding-top: 5rem;
+    background-color: #F3F0F9; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.post-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.post-image-container {
+    flex: 0 0 250px;
+    max-height: 250px;
+}
+
+
+.post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .25rem;
+}
+
+.post-content {
+    flex: 1;
+}
+
+
+.profile-avatar {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+}
+
+.account-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.blog-post {
+    background-color: #E6E6FA;
+    border: 1px solid #C4A8FF;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-bottom: none !important;
+    padding-bottom: 1.5rem !important;
+}
+
+
+.post-content h2 a {
+    color: #483D8B;
+    font-weight: bold;
+    text-decoration: none;
+}
+.post-content h2 a:hover {
+    color: #6A5ACD;
+}
+
+.btn-outline-primary {
+    color: #9ACD32;
+    border-color: #9ACD32;
+    font-weight: bold;
+    font-style: italic;
+}
+.btn-outline-primary:hover {
+    background-color: #9ACD32;
+    color: white;
+    border-color: #9ACD32;
+}
+
+
+.navbar.bg-dark {
+    background-color: #E0D6F5 !important; 
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #8A2BE2;
+    font-weight: 500; 
+}
+
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover {
+    color: #6A1EBD; 
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(138, 43, 226, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.page-link {
+    color: #8A2BE2; 
+    background-color: #fff; 
+    border-color: #C4A8FF;
+}
+
+.page-link:hover {
+    background-color: #8A2BE2; /* Фиалковый фон */
+    color: white; /* Белый текст */
+    border-color: #8A2BE2;
+}
+body {
+    padding-top: 5rem;
+    background-color: #F3F0F9; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.post-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+
+.post-image-container {
+    flex: 0 0 250px;
+    max-height: 250px;
+}
+
+.post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .25rem;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.profile-avatar {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+}
+
+.account-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.blog-post {
+    background-color: #E6E6FA;
+    border: 1px solid #C4A8FF;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-bottom: none !important;
+    padding-bottom: 1.5rem !important;
+}
+
+
+.post-content h2 a {
+    color: #483D8B;
+    font-weight: bold;
+    text-decoration: none;
+}
+.post-content h2 a:hover {
+    color: #6A5ACD;
+}
+
+
+.btn-outline-primary {
+    color: #9ACD32;
+    border-color: #9ACD32;
+    font-weight: bold;
+    font-style: italic;
+}
+.btn-outline-primary:hover {
+    background-color: #9ACD32;
+    color: white;
+    border-color: #9ACD32;
+}
+
+.navbar.bg-dark {
+    background-color: #E0D6F5 !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #8A2BE2; 
+    font-weight: 500; 
+}
+
+
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover {
+    color: #6A1EBD; 
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(138, 43, 226, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+.page-link {
+    color: #8A2BE2; 
+    background-color: #fff; 
+    border-color: #C4A8FF; 
+}
+
+.page-link:hover {
+    background-color: #8A2BE2;
+    color: white;
+    border-color: #8A2BE2;
+}
+
+
+.page-item.disabled .page-link {
+    color: #aaa; 
+    background-color: #f0f0f0; 
+    border-color: #ddd;
+}
+
+
+.page-item.disabled .page-link {
+    color: #aaa; 
+    background-color: #f0f0f0; 
+    border-color: #ddd;
+}
