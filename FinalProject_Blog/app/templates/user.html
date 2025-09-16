@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="d-flex align-items-center mb-4">
+        <img src="{{ user.avatar(128) }}" class="rounded-circle me-3 profile-avatar" alt="Аватар пользователя">
+        <div>
+            <h1>Профиль: {{ user.username }}</h1>
+            {% if user.about_me %}<p class="text-muted">{{ user.about_me }}</p>{% endif %}
+            {% if user.last_seen %}<p class="text-muted"><small>Последний раз был онлайн: {{ user.last_seen.strftime('%d-%m-%Y %H:%M') }}</small></p>{% endif %}
+        </div>
+    </div>
+
+    <hr>
+    <h3 class="mb-3">Посты пользователя {{ user.username }} ({{ posts|length }}):</h3>
+
+    {% for post in posts %}
+        <article class="blog-post post-layout mb-4 border-bottom pb-3">
+
+            {% if post.image_file %}
+            <div class="post-image-container">
+                <a href="{{ url_for('main.post', post_id=post.id) }}">
+                    <img src="{{ url_for('static', filename='post_pics/' + post.image_file) }}" class="post-image" alt="Изображение к посту">
+                </a>
+            </div>
+            {% endif %}
+
+            <div class="post-content">
+                <h2>
+                    <a class="text-decoration-none" href="{{ url_for('main.post', post_id=post.id) }}">{{ post.title }}</a>
+                </h2>
+
+                {% if current_user.is_authenticated %}
+
+                    <p class="blog-post-meta text-muted">
+                        Опубликовано: {{ post.timestamp.strftime('%d-%m-%Y') }}
+                    </p>
+                    <p>{{ post.body | truncate(250) }}</p>
+                    <a href="{{ url_for('main.post', post_id=post.id) }}" class="btn btn-outline-primary btn-sm">Читать далее...</a>
+                {% else %}
+                    <div class="alert alert-secondary mt-3" role="alert">
+                        Чтобы прочитать пост, пожалуйста,
+                        <a href="{{ url_for('main.login') }}" class="alert-link">войдите</a> или
+                        <a href="{{ url_for('main.register') }}" class="alert-link">зарегистрируйтесь</a>.
+                    </div>
+                {% endif %}
+
+            </div>
+
+        </article>
+    {% endfor %}
+{% endblock %}
